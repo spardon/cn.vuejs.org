@@ -137,16 +137,11 @@ Vue.js 允许你自定义过滤器，可被用作一些常见的文本格式化�
 
 
 ``` js
-new Vue({
-  // ...
-  filters: {
-    capitalize: function (value) {
-      if (!value) return ''
-      value = value.toString()
-      return value.charAt(0).toUpperCase() + value.slice(1)
-    }
-  }
-})
+Vue.filter('capitalize', function(value){
+        if(!value) return ''
+        value = value.toString()
+        return value.charAt(0).toUpperCase()+value.slice(1)
+ })
 ```
 
 过滤器可以串联：
